@@ -25,8 +25,6 @@ class MainEvent extends Component {
                         <div>{event.date}</div>
                         <div>{event.location}</div>
                     </div>
-                    <div className="description-wrapper">{event.description}</div>
-                    <div>${event.cover}</div>
                 </div>
             )
         })
