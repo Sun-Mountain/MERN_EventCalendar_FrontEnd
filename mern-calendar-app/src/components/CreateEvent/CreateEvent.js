@@ -47,8 +47,8 @@ class CreateEvent extends Component {
                 console.log(this.state)
                 // console.log('hello')
                 console.log('done creating')
-                this.props.getLatestEvents()
                 this.props.history.push('/')
+                this.props.getLatestEvents()
                 // does another axios.get
             })
     }
