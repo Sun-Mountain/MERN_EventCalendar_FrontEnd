@@ -52,3 +52,12 @@ __Dependencies Used:__
 :arrow_right: react-router-dom
 
 :arrow_right: react-scripts
+
+## Use the App
+http://greedy-lettuce.surge.sh/
+
+## Unsolved Problems
+
+## The Future
+
+## Credits
