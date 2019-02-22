@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   getLatestEvents() {
-    axios.get("https://dashboard.heroku.com/apps/lettuce-meat-api/events")
+    axios.get("https://lettuce-meat-api.herokuapp.com/events")
     .then(console.log("got"))
     .then((res) => {
         // console.log(res)
@@ -78,7 +78,7 @@ class App extends Component {
 
   handleSignUp(e) {
     e.preventDefault()
-    axios.post('https://dashboard.heroku.com/apps/lettuce-meat-api/users/signup', {
+    axios.post('https://lettuce-meat-api.herokuapp.com/users/signup', {
       email: this.state.email,
       password: this.state.password
     })
@@ -92,7 +92,7 @@ class App extends Component {
 
   handleLogIn (e) {
     e.preventDefault()
-    axios.post('https://dashboard.heroku.com/apps/lettuce-meat-api/users/login', {
+    axios.post('https://lettuce-meat-api.herokuapp.com/users/login', {
       email: this.state.email,
       password: this.state.password
     })
