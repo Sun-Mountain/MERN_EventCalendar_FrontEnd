@@ -18,6 +18,7 @@ class MainEvent extends Component {
 
     render() {
         const events = this.props.events.map((event, index) => {
+            console.log('hello')
             return (
                 <div key={index} className="event-card">
                     <Link to={`/events/${event._id}`} className="event-link"><h1><img src={lettuce} alt="" className="lettuce" />{event.title}</h1></Link>

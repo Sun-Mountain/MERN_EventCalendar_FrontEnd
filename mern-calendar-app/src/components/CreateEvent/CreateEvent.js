@@ -41,10 +41,10 @@ class CreateEvent extends Component {
     }
 
     handleSubmit(e) {
-        // e.preventDefault()
+        e.preventDefault()
         axios.post('https://lettuce-meat-api.herokuapp.com/events/new', this.state )
             .then(() => {
-                // console.log(this.state)
+                console.log(this.state)
                 // console.log('hello')
                 console.log('done creating')
                 this.props.getLatestEvents()
