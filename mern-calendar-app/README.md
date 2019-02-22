@@ -1,3 +1,8 @@
+# Lettuce Meet
+
+![ScreenShot](./mern-calendar-app/src/images/app_home.png)
+![ScreenShot](./mern-calendar-app/src/images/app_event.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
