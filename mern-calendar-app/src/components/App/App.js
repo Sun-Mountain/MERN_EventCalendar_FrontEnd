@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   getLatestEvents() {
-    axios.get("http://localhost:3001/events")
+    axios.get("https://lettuce-meat-api.herokuapp.com/events")
     .then(console.log("got"))
     .then((res) => {
         // console.log(res)
@@ -78,7 +78,7 @@ class App extends Component {
 
   handleSignUp(e) {
     e.preventDefault()
-    axios.post('http://localhost:3001/users/signup', {
+    axios.post('https://lettuce-meat-api.herokuapp.com/users/signup', {
       email: this.state.email,
       password: this.state.password
     })
@@ -92,7 +92,7 @@ class App extends Component {
 
   handleLogIn (e) {
     e.preventDefault()
-    axios.post('http://localhost:3001/users/login', {
+    axios.post('https://lettuce-meat-api.herokuapp.com/users/login', {
       email: this.state.email,
       password: this.state.password
     })
