@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import '../MainEvent/MainEvent.scss';
+import './OneEvent.scss'
+
+// images
+import lettuce from '../../images/lettuce.png'
 
 class OneEvent extends Component {
 
@@ -19,7 +24,15 @@ class OneEvent extends Component {
     if(showEvent) {
       console.log('event matches, showing')
       return (
-        <div><h1>{showEvent.title}</h1> by <h3>{showEvent.email}</h3></div>
+        <div className="event-card one-event">
+          <h1><img src={lettuce} alt="" className="lettuce" />{showEvent.title}</h1>
+          <div className="date-location-wrapper">
+            <div>{showEvent.date}</div>
+            <div>{showEvent.location}</div>
+          </div>
+          <div className="description-wrapper">{showEvent.description}</div>
+          <div>${showEvent.cover}</div>
+        </div>
       )
       }
       else { 
