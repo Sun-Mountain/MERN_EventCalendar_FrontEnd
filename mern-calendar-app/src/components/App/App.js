@@ -146,9 +146,6 @@ class App extends Component {
               }} />
           </Switch>
         </div>
-        <footer>
-          <div>Created by JHD & NPZ &hearts;</div>
-        </footer>
       </div>
     );
   }

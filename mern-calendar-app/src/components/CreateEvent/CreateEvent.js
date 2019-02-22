@@ -15,8 +15,6 @@ class CreateEvent extends Component {
             date: new Date(),
             location: '',
             author: localStorage.getItem('lettuceId'),
-            description: '',
-            cover: '',
             public: false
         };
 
