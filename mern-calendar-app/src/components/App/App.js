@@ -137,7 +137,7 @@ class App extends Component {
             }} />
             <Route path='/events/edit/:id' render={ (props) => {
               return (
-                <EditEvent isLoggedIn={this.state.isLoggedIn} events={this.state.events} {...props} />
+                <EditEvent isLoggedIn={this.state.isLoggedIn} events={this.state.events} {...props} getLatestEvents={this.getLatestEvents} />
               )
             }}/>
             <Route path='/events/:id' render={ (props) => {
