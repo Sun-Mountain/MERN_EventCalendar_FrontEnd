@@ -29,6 +29,11 @@ class OneEvent extends Component {
           </div>
           <div className="description-wrapper">{showEvent.description}</div>
           <div>${showEvent.cover}</div>
+
+          <div className="updel-button-wrapper">
+            <button>Update Event</button>
+            <button>Delete Event</button>
+          </div>
         </div>
       )
       }

@@ -1,6 +1,26 @@
 @import '../color-palette.scss';
 
+button {
+    border: 1px solid $dark-green;
+    border-radius: 4px;
+    color: $med-green;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 20px 10px 10px 10px;
+}
+
+button:hover {
+    background-color: $med-green;
+    color: $white;
+}
+
 .one-event {
     margin: 25px auto;
     width: 45%;
+}
+
+.updel-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
