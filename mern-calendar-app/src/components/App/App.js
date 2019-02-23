@@ -7,6 +7,7 @@ import './App.scss';
 
 // Routes
 import CreateEvent from '../CreateEvent/CreateEvent'
+import EditEvent from '../EditEvent/EditEvent'
 import Header from '../Header/Header'
 import LogInForm from '../LogIn/LogIn'
 import LogOut from '../LogOut/LogOut'
@@ -134,6 +135,11 @@ class App extends Component {
                 <LogOut isLoggedIn={this.state.isLoggedIn} handleLogOut={this.handleLogOut} />
               )
             }} />
+            <Route path='/events/edit/:id' render={ (props) => {
+              return (
+                <EditEvent isLoggedIn={this.state.isLoggedIn} events={this.state.events} {...props} />
+              )
+            }}/>
             <Route path='/events/:id' render={ (props) => {
               return (
                 <OneEvent isLoggedIn={this.state.isLoggedIn} events={this.state.events} {...props} />

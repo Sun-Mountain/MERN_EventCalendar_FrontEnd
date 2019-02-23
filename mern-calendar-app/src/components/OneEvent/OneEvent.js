@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import '../MainEvent/MainEvent.scss';
 import './OneEvent.scss'
@@ -22,7 +23,7 @@ class OneEvent extends Component {
   }
 
   componentDidMount() {
-    axios.get(url + this.props.match.params.id)
+    axios.get(url + localStorage.lettuceId)
         .then(event => {
           console.log('event in state')
         this.setState({
@@ -44,8 +45,8 @@ class OneEvent extends Component {
   })
   .then(() => {
       console.log('has been deleted')
-      this.props.history.push('/')
       this.props.getLatestEvents()
+      this.props.history.push('/')
       // does another axios.get
   })
     .catch((err) => {
@@ -73,8 +74,8 @@ class OneEvent extends Component {
           <div>${showEvent.cover}</div>
 
           <div className="updel-button-wrapper">
-            <button>Update Event</button>
-            <button onClick={this.deleteHandler}>Delete Event</button>
+          <Link to={`/events/edit/${showEvent._id}`}><button className="buttons">Update Event</button></Link>
+            <button className="buttons" onClick={this.deleteHandler}>Delete Event</button>
           </div>
         </div>
       )
