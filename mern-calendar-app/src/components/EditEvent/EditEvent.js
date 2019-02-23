@@ -55,13 +55,13 @@ class EditEvent extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        axios.post('https://lettuce-meat-api.herokuapp.com/events/edit/' + `${localStorage.lettuceId}`, this.state )
+        axios.put(url + `/edit/${this.props.match.params.id}, this.state )
             .then(() => {
                 console.log(this.state)
                 // console.log('hello')
                 console.log('done creating')
-                this.props.history.push('/')
                 this.props.getLatestEvents()
+                this.props.history.push('/')
                 // does another axios.get
             })
     }
