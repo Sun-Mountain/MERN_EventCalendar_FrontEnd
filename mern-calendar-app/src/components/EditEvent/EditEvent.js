@@ -55,7 +55,7 @@ class EditEvent extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        axios.put('https://lettuce-meat-api.herokuapp.com/events/edit/:id', this.state )
+        axios.post('https://lettuce-meat-api.herokuapp.com/events/edit/:id', this.state )
             .then(() => {
                 console.log(this.state)
                 // console.log('hello')
