@@ -1,14 +1,57 @@
 import React, { Component } from 'react';
+import DatePicker from "react-datepicker";
+import { Redirect, Link } from 'react-router-dom'
+import axios from 'axios'
 import '../MainEvent/MainEvent.scss';
 import './OneEvent.scss'
 
 // images
 import lettuce from '../../images/lettuce.png'
 
+const url = 'https://lettuce-meat-api.herokuapp.com/events/'
+
 class OneEvent extends Component {
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log('updated', prevProps, this.props)
+  constructor() {
+    super()
+
+    this.state = {
+      event: {}
+    }
+
+    this.deleteHandler = this.deleteHandler.bind(this)
+  }
+
+  componentDidMount() {
+    axios.get(url + localStorage.lettuceId)
+        .then(event => {
+          console.log('event in state')
+        this.setState({
+            event: event.data
+        })
+          console.log(this.state)
+    })
+        .catch(err => {
+        console.log(err)
+        })
+  }
+
+  deleteHandler() {
+    axios.delete(url + this.props.match.params.id, {
+      data: {token: localStorage.token}
+    })
+    .then(res => {
+        console.log('deleted')
+  })
+  .then(() => {
+      console.log('has been deleted')
+      this.props.getLatestEvents()
+      this.props.history.push('/')
+      // does another axios.get
+  })
+    .catch((err) => {
+        console.log(err);
+    })
   }
   
   renderEvent = (events) => {
@@ -29,6 +72,11 @@ class OneEvent extends Component {
           </div>
           <div className="description-wrapper">{showEvent.description}</div>
           <div>${showEvent.cover}</div>
+
+          <div className="updel-button-wrapper">
+          <Link to={`/events/edit/${showEvent._id}`}><button className="buttons">Update Event</button></Link>
+            <button className="buttons" onClick={this.deleteHandler}>Delete Event</button>
+          </div>
         </div>
       )
       }
