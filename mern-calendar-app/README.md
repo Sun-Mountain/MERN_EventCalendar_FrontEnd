@@ -6,6 +6,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 **Lettuce Meet** allows users to create an account and then create events. View the events on the front page and each event on its own page.
+=======
 
 ## Project Requirements (for front-end)
 
@@ -30,3 +31,33 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 :arrow_right: MongoDB & Mongoose
 
 :arrow_right: React.js
+
+## Installation Instructions
+__Dependencies Used:__
+
+:arrow_right: axios
+
+:arrow_right: node-sass
+
+:arrow_right: react
+
+:arrow_right: react-calendar
+
+:arrow_right: react-datepicker
+
+:arrow_right: react-dom
+
+:arrow_right: react-input-calendar
+
+:arrow_right: react-router-dom
+
+:arrow_right: react-scripts
+
+## Use the App
+http://greedy-lettuce.surge.sh/
+
+## Unsolved Problems
+
+## The Future
+
+## Credits
